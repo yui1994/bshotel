@@ -1,0 +1,156 @@
+/***清除bootstrap5設定的scroll功能****/
+:root{
+    scroll-behavior: auto;
+}
+
+body{
+    font-family: 'Roboto','Noto Sans TC',arial, sans-serif;
+    background: #eee;
+}
+
+#himaSlider img{
+    object-fit: cover;
+    filter: grayscale(50%);
+}
+
+#himaSlider .carousel-caption{
+    text-shadow: 0.1rem 0.1rem 0.3rem #666;
+}
+
+#himaSlider .carousel-indicators>button{
+    width:20px;
+    height:20px;
+    border-radius: 50%;
+    border: 15px solid transparent;
+}
+
+#himaArrow{
+    right:5vh;
+    bottom:5vh;
+    z-index: 999;
+    display: none;
+}
+
+#himaArrow>a {
+    animation: himaJump 2s ease infinite;
+  }
+  
+  @keyframes himaJump {
+  
+    0%,
+    20%,
+    53%,
+    80%,
+    100% {
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      transform: translate(0, 0);
+    }
+  
+    40%,
+    43% {
+      animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      transform: translate(0, -30px);
+    }
+  
+    70% {
+      animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      transform: translate(0, -15px);
+    }
+  
+    90% {
+      transform: translate(0, -4px);
+    }
+  }
+
+  /******himaRoom******/
+#himaRoom .nav-link{
+    flex:0 1 15%;
+    background: #fff3cd;
+    border-color: #ffecb5;
+    color: #82660d;
+    box-shadow: 1px -1px 3px 0px #b0b0b0a8;
+}
+#himaRoom .nav-link.active{
+    background: #ffc107;
+    color: #fff3cd;
+    border: 0;
+}
+
+#himaRoom .nav-tabs,
+#himaRoom .nav-link{
+    border-bottom: 1px solid #ffc107;
+}
+
+#himaRoom .tab-content>.row.active{
+    display: flex;
+}
+
+#roomPrice th{
+    width: 25%;
+}
+
+#roomPrice th,
+#roomPrice td{
+    text-align: center;
+    vertical-align:middle;
+}
+
+/*******himaFacility***********/
+@media(min-width:992px){
+#himaFacility li:nth-of-type(even) img{
+    order:1;
+}
+}
+
+#himaFacility {
+    background:
+    radial-gradient(circle, transparent 40%, #ccc 70%),
+    url("../media/P1160459.JPG");
+    background-blend-mode: screen;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    text-shadow: 2px 2px 10px black;
+}
+
+/*******himaFood*******/
+#himaFood .accordion-button:not(.collapsed){
+    background: #ffc107;
+    color: white !important;
+}
+
+#foodMenu small{
+    transform: rotate(-20deg) translate(-35%,-35%);
+    z-index: 999;
+
+}
+
+/*******himaTrans******/
+#himaTrans iframe{
+    filter: grayscale(70%) brightness(30%);
+}
+
+/******轉場********/
+.nav-link{
+    transition: 1s ease;
+}
+
+#himaMenu{
+    transition: 2s;
+}
+/*****用偽元素在navbar做下底線*********/
+/* .nav-link::after{
+    content:"";
+    display: block;
+    height: 2px;
+    width: 0%;
+    background: white;
+    margin: 5px 0;
+    transition: 1s width ease;
+}
+
+.nav-link.active::after{
+    width: 100%;
+} */
+
